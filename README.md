@@ -83,13 +83,21 @@ The integration uses the **Bedrock Converse API** to send raw binary image data 
 ```mermaid
 graph TD
     A[Upload Image] --> B[Calculate SHA-256 Hash]
-    B --> C{Record on QDay?}
+    B --> C{Exact Match?}
     C -- Yes --> D[Result: Verified Original]
-    C -- No --> E[Invoke AWS Bedrock Vision]
-    E --> F{Llama 3.2 Verdict}
-    F -- Real --> G[Result: Likely Real Photograph]
-    F -- AI --> H[Result: High AI Probability]
+    C -- No --> E[Generate dHash Fingerprint]
+    E --> F{Similar Match >85%?}
+    F -- Yes --> G[Result: Perceptual Derivative]
+    F -- No --> H[Invoke AWS Bedrock Vision]
+    H --> I{Llama 3.2 Verdict}
+    I -- Real --> J[Result: Likely Real Photograph]
+    I -- AI --> K[Result: High AI Probability]
 ```
+
+#### Verification Layers:
+1. **L1: Cryptographic Integrity** — Bit-for-bit SHA-256 matching against the Abelian blockchain.
+2. **L2: Perceptual Similarity** — dHash + Hamming Distance search to detect resized, cropped, or filtered derivatives.
+3. **L3: Generative Forensics** — Multimodal AI analysis via AWS Bedrock to detect synthetic characteristics.
 
 ---
 
