@@ -16,6 +16,8 @@ Ideation & Video Production: Achi/Anna/Klarc
 
 ---
 
+LINK: https://delay-no-more-six.vercel.app
+
 ## 🏛 Technical Architecture
 
 The system is built on a modern **Next.js 15** (App Router) foundation, utilizing a "Sponsored Minting" architecture where the platform manages gas costs and signing server-side to provide a seamless, wallet-less experience for end-users.
