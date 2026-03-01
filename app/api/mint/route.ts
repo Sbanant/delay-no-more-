@@ -49,15 +49,13 @@ export async function POST(req: Request) {
         const contract = new ethers.Contract(QDAY_CONTRACT_ADDRESS, CONTRACT_ABI, wallet);
 
         // 3. Check if this image hash is already minted
-        try {
-            const alreadyRegistered = await contract.isHashRegistered(imageHash);
-            if (alreadyRegistered) {
-                return NextResponse.json({
-                    error: 'This exact image has already been minted on the QDay blockchain.'
-                }, { status: 409 });
-            }
-        } catch {
-            // If the check fails, proceed anyway (the contract will revert if duplicate)
+        console.log(`[Mint API] Checking blockchain for hash: ${imageHash}`);
+        const alreadyRegistered = await contract.isHashRegistered(imageHash);
+        if (alreadyRegistered) {
+            console.warn(`[Mint API] Duplicate detected on-chain for hash: ${imageHash}`);
+            return NextResponse.json({
+                error: 'This exact image has already been minted on the QDay blockchain.'
+            }, { status: 409 });
         }
 
         // 4. Run AI analysis (client-side mock for now)
