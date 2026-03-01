@@ -2,7 +2,7 @@
 
 Generative AI has made it effortless to create hyper-realistic fakes. It is at a point where even humans and AI themselves find it hard to distinguish between AI generated content and real content. Deepfakes spread misinformation, artists lose ownership of their work, and the public can no longer trust what they see. 
 
-ExposAI is a high-performance decentralized application (dApp) designed to restore trust in digital media. By leveraging the **Abelian (QDay) Blockchain** and **AWS Bedrock AI Vision**, ExposAI allows creators to anchor AI-generated content to an immutable ledger and provides consumers with a sophisticated forensic verification layer to detect synthetic media. We imagine a future where every AI model uses our product to automatically stamp a 'made by AI' certificate the moment it is produced.
+ExposAI is a high-performance image verification system designed to restore trust in digital media. By leveraging the **Abelian (QDay) Blockchain** and **AWS Bedrock AI Vision**, ExposAI allows creators to anchor AI-generated content to an immutable ledger and provides consumers with a sophisticated forensic verification layer to detect synthetic media. We imagine a future where every AI model uses our product to automatically stamp a 'made by AI' certificate the moment it is produced.
 
 Our target customers include:
 - Journalists & Media – Verify sources before publishing.
